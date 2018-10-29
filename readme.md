@@ -1,3 +1,6 @@
+## Enlace al tablero: https://trello.com/b/pb10lmnp/e19cp1a1
+
+---
 # Experiencia 19 - Actividad Presencial I
 ## Relaciones N a N
 
@@ -8,7 +11,7 @@ El objetivo de esta actividad es la implementación de relaciones N a N en un pr
 - Un cliente solicita la creación de una plataforma web en Rails que gestione el proceso de asignación de personal a diferentes proyectos.
 
 	- El cliente especifica que una persona puede trabajar en varios proyectos y en un proyecto pueden trabajar varias personas.
-	
+
 	- El cliente quiere tener control de la asignación de personal a proyectos, es decir:
 		- Poder ingresar, editar y eliminar personas.
 		- Poder ingresar, editar y eliminar proyectos.
