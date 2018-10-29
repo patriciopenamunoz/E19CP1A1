@@ -1,2 +1,4 @@
 <h1>Person details</h1>
 <h4>Name: <%= "#{@person.first_name} #{@person.last_name}" %></h4>
+<%= link_to 'Remove', person_path(@person.id), method: 'delete',
+                                 class: 'btn btn-danger'%>

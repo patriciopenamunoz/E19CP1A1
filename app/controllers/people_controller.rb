@@ -1,6 +1,10 @@
 class PeopleController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @people = Person.all
+  end
+
   def new
     @person = Person.new
   end
@@ -16,6 +20,14 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.find(params[:id])
+  end
+
+  def destroy
+    if Person.delete(params[:id])
+      redirect_to people_path, notice: 'Person removed.'
+    else
+      redirect_to people_path, alert: 'Error detected: Person not removed.'
+    end
   end
 
   private
