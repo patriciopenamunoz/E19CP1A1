@@ -1,8 +1,2 @@
 <h1>Add new Project</h1>
-<%= form_with model: @project, local: true do |f| %>
-<div class='form-group'>
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
-</div>
-<%= f.submit class: 'btn btn-primary' %>
-<% end %>
+<%= render 'form' %>

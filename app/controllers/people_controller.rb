@@ -9,6 +9,19 @@ class PeopleController < ApplicationController
     @person = Person.new
   end
 
+  def edit
+    @person = Person.find(params[:id])
+  end
+
+  def update
+    @person = Person.new
+    if @person.update(person_params)
+      redirect_to person_path(@person.id), notice: 'Person updated.'
+    else
+      redirect_to edit_person_path, alert: 'Error detected: Person not updated.'
+    end
+  end
+
   def create
     @person = Person.new(person_params)
     if @person.save

@@ -2,10 +2,24 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @projects = Project.all
   end
 
   def new
     @project = Project.new
+  end
+
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.new
+    if @project.update(project_params)
+      redirect_to project_path(@project.id), notice: 'Project updated.'
+    else
+      redirect_to edit_project_path, alert: 'Error detected: Project not updated.'
+    end
   end
 
   def create
@@ -19,6 +33,14 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+  end
+
+  def destroy
+    if Project.delete(params[:id])
+      redirect_to projects_path, notice: 'Project removed.'
+    else
+      redirect_to projects_path, alert: 'Error detected: Project not removed.'
+    end
   end
 
   private
